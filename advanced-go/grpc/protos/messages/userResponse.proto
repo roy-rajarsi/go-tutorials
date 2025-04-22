@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/roy-rajarsi/go-tutorials/advanced-go/grpc/generated/messages;user";
+
+import "messages/user.proto";
+
+message UserResponse {
+    string responseId = 1;
+    User user = 2;
+}

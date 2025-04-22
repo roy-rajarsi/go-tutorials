@@ -1,0 +1,20 @@
+protoc \
+  -I "./protos" \
+  --go_out="generated/" \
+  --go_opt=paths=source_relative \
+  --go-grpc_out="generated/" \
+  --go-grpc_opt=paths=source_relative \
+  protos/messages/*.proto \
+  --plugin=protoc-gen-go=$(go env GOPATH)/bin/protoc-gen-go \
+  --plugin=protoc-gen-go-grpc=$(go env GOPATH)/bin/protoc-gen-go-grpc
+
+
+protoc \
+  -I "./protos" \
+  --go_out="generated/" \
+  --go_opt=paths=source_relative \
+  --go-grpc_out="generated/" \
+  --go-grpc_opt=paths=source_relative \
+  protos/services/*.proto \
+  --plugin=protoc-gen-go=$(go env GOPATH)/bin/protoc-gen-go \
+  --plugin=protoc-gen-go-grpc=$(go env GOPATH)/bin/protoc-gen-go-grpc

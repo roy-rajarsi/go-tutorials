@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/roy-rajarsi/go-tutorials/advanced-go/grpc/generated/services;user";
+
+import "messages/userResponse.proto";
+import "messages/userRequest.proto";
+
+service GetUser {
+    rpc GetUser(UserRequest) returns (UserResponse);
+}
